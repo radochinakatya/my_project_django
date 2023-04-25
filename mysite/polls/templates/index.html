@@ -1,0 +1,56 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block body %}
+    <div class="gallary">
+        <img src='{% static "Gallary1.png" %}' width="1800" height="672">
+    </div>
+
+
+    <div class="About">
+
+        <div class="titleAbout">
+            <p>О мастерской</p>
+        </div>
+        <div class="text-box1">
+            <p>Наша мастерская по изготовлению керамической посуды
+                отметила свой десятый год существования. За это время мы
+                стали одним из лидеров в производстве авторской керамики,
+                обеспечивая качественную посуду как для частных клиентов,
+                так и для ресторанов и кафе различных городов.</p>
+        </div>
+
+        <div class="text-box2">
+            <p>Мы гордимся нашими семью коллекциями, каждая из которых
+                отличается уникальностью и неповторимым дизайном. Наша
+                посуда сочетает в себе элегантность форм, гармонию цветов
+                и практичность использования. Мы делаем упор на комфортное
+                использование посуды в повседневной жизни - все наши изделия
+                можно легко мыть в посудомоечной машине и использовать в
+                микроволновой печи без каких-либо опасений.</p>
+        </div>
+    </div>
+
+    <div class="collage">
+        <img src='{% static "Collage.png" %}' height="1304" width="1576">
+    </div>
+
+    <button type="button">Перейти в каталог</button>
+
+    <div class="input">
+
+        <div id="rectangle">
+            <div class="inputcontent">
+                <div class="emailtext">Подпишись на рассылку, чтобы первым узнавать о новых коллекциях
+                </div>
+                <div class="inputEmail">
+                    <a href="mailto: 11111@gmail.com">
+                    </a>
+                    <input type="email" placeholder="E-mail">
+                    <input type="submit">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+</html>

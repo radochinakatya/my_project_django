@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href='{% static "style.css" %}'>
+    <title>CLAY-MADE - керамическая посуда</title>
+</head>
+
+    <header>
+        <div class="logo">CLAY-MADE</div>
+        <nav>
+            <ul>
+                <li><a href="/" class="main">Главная</a></li>
+                <li><a href="/shop">Магазин</a></li>
+                <li><a href="/delivery">Доставка и оплата</a></li>
+                <li><a href="/about">О нас</a></li>
+                <li><img src='{% static "Корзина.svg" %}'></li>
+                <li id="profile"><img src='{% static "Profile picture.png" %}'></li>
+            </ul>
+        </nav>
+    </header>
+
+<body>
+{% block body %}
+{% endblock %}
+
+</body>
+
+    <footer>
+        <div class="logo2">CLAY-MADE</div>
+    </footer>
+
+
+</html>
