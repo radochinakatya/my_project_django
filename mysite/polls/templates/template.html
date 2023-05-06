@@ -6,17 +6,18 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href='{% static "style.css" %}'>
+    <script src="index.js" defer></script>
     <title>CLAY-MADE - керамическая посуда</title>
 </head>
 
     <header>
-        <div class="logo">CLAY-MADE</div>
+        <div class="logo"><a href="index.html">CLAY-MADE</a></div>
         <nav>
             <ul>
-                <li><a href="/" class="main">Главная</a></li>
-                <li><a href="/shop">Магазин</a></li>
-                <li><a href="/delivery">Доставка и оплата</a></li>
-                <li><a href="/about">О нас</a></li>
+                <li><a href="/" id="main">Главная</a></li>
+                <li><a href="catalog.html">Магазин</a></li>
+                <li><a href="delivery.html">Доставка и оплата</a></li>
+                <li><a href="about.html">О нас</a></li>
                 <li><img src='{% static "Корзина.svg" %}'></li>
                 <li id="profile"><img src='{% static "Profile picture.png" %}'></li>
             </ul>

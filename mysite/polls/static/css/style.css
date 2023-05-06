@@ -1,3 +1,5 @@
+@import "./reset.css";
+
 * {
     font-family: Gilroy;
     box-sizing: border-box;
@@ -12,7 +14,7 @@ header {
     height: 104px;
     background-color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     margin-left: auto;
@@ -38,6 +40,7 @@ nav {
 
 #main {
     color: black;
+    
 }
 
 #about {
@@ -49,6 +52,10 @@ nav {
 }
 
 #delivery {
+    color: black;
+}
+
+#catalog {
     color: black;
 }
 
@@ -68,6 +75,10 @@ li {
 
 nav a {
     color: rgba(138, 138, 138, 1);
+}
+
+a {
+    color: black;
 }
 
 nav a:hover {
@@ -98,7 +109,7 @@ nav a:hover {
     text-align: center;
     font-weight: normal;
     font-size: 36px;
-
+    margin-top: 80px;
 }
 
 .titleAbout2 {
@@ -112,7 +123,6 @@ nav a:hover {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 40px;
     margin-top: 40px;
     font-weight: lighter;
     line-height: 182%;
@@ -139,7 +149,8 @@ button {
     cursor: pointer;
 }
 
-#rectangle {
+/*  
+.rectangle {
     width: 220px;
     height: 120px;
     background: #F7F7F7;
@@ -150,18 +161,45 @@ button {
     margin-left: auto;
     margin-right: auto;
 }
-
-.emailtext {
-    margin: 162px 254px;
-    font-weight: lighter;
-    font-size: 36px;
+*/
+.input {
+    width: 220px;
+    height: 120px;
+    background: #DADBE0;
+    border-radius: 20px;
+    width: 1800px;
+    height: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+}
+.inputcontent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
 }
 
+.emailtext {
+    font-weight: lighter;
+    font-size: 36px;
+    max-width: 1300px;
+
+}
+
+.inputEmail {
+    margin-top: 100px;
+}
 
 input {
     border: none;
     border-bottom: 1px solid black;
-    background-color: #F7F7F7;
+    background-color: #DADBE0;
     font-size: 24px;
     color: #7F7F7F;
 }
@@ -258,10 +296,6 @@ footer {
     font-size: 24px;
     line-height: 182%;
     text-align: justify;
-}
-
-.titleAbout {
-    margin-bottom: 60px;
 }
 
 .text2 p:first-child {
@@ -364,9 +398,195 @@ footer {
 
 
 .block2_delivery {
-    margin-top: 80px;
     max-width: 1500px;
     display: flex;
     justify-content: space-between;
     margin: 80px auto 0 auto;
 }
+
+
+
+/* Каталог */
+
+.catalog_nav {
+    display: flex;
+    max-width: 1800px;
+    margin: 80px auto 80px auto;
+    font-size: 24px;
+}
+
+#filter {
+    margin-right: 60px;
+}
+
+.catalog-1{
+    max-width: 1800px;
+    max-height: 680px;
+    margin:0px auto 20px auto ;
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog-2{
+    max-width: 1800px;
+    max-height: 680px;
+    margin: 80px auto 20px auto ;
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog-3{
+    max-width: 1800px;
+    max-height: 680px;
+    margin: 80px auto 20px auto ;
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog-4{
+    max-width: 1800px;
+    max-height: 680px;
+    margin: 80px auto 20px auto ;
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog-1-item{
+    display: flex;
+    flex-direction: column;
+}
+
+.catalog-h2{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    opacity: 70%;
+    height: 60px;
+    width: 400px;
+    margin-top: 20px;
+}
+
+.catalog-p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: black;
+    max-width: 520px;
+}
+
+#plus {
+    margin-top: 20px;
+    height: 44px;
+    width: 44px;
+}
+
+.additional {
+    text-align: right;
+    max-width: 520px;
+    margin-top: 20px;
+}
+
+.textinfo {
+    display: flex;
+    max-width: 520px;
+    justify-content: space-between;
+}
+
+#line {
+    margin: 20px 50px 0 50px;
+    max-width: 520px;
+}
+
+.container_catalog {
+    overflow: hidden;
+  }
+  
+  .filterDiv {
+    float: left;
+    align-items: center;
+    display: none; /* Скрыто по умолчанию */
+  }
+  
+  /* В класс "show" добавляется к отфильтрованные элементы */
+  .show {
+    display: block;
+  }
+
+  .btn:hover {
+    color: black;
+  }
+
+  .btn.active {
+    color: black;
+  }
+
+  .btn {
+    color: #8A8A8A;
+  }
+
+
+
+
+/* Слайдер: */
+
+.slider{
+    max-width: 1800px;
+    /* Положение элемента устанавливается относительно его исходной позиции: */
+    position: relative;
+    margin: auto;
+    height: 672px;
+}
+
+
+.slider .item img {
+    /* Элемент меняет размер так, чтобы заполнить блок и сохранить пропорции: */
+    object-fit: cover;
+    width: 1800px;
+    height: 672px;
+    filter: brightness(80%);
+    border-radius: 10px;
+}
+
+/* Кнопки назад и вперёд: */
+.slider .previous, .slider .next {
+    /* Добавляет курсору иконку, когда тот оказывается над кнопкой: */
+    cursor: pointer;
+    /* Положение элемента задаётся относительно границ браузера: */
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    /* Оформление самих кнопок: */
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    /* Плавное появление фона при наведении курсора: */
+    transition: 0.6s ease;
+    /* Скругление границ: */
+    border-radius: 0 2px 2px 0;
+}
+
+.slider .next {
+    right: 0;
+}
+
+
+/* Анимация слайдов: */
+.slider .item {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    /* Устанавливаем и изменяем степень прозрачности: */
+    from {
+        opacity: 0.7
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/* поп ап */
