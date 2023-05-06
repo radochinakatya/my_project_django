@@ -22,4 +22,5 @@ urlpatterns = [
     path('', index.index),
     path('about/', index.about),
     path('about/work', index.aboutWork),
+    path('delivery/', index.delivery),
 ]
