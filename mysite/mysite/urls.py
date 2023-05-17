@@ -17,10 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from polls.controllers import index
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index.index),
-    path('about/', index.about),
-    path('about/work', index.aboutWork),
-    path('delivery/', index.delivery),
+    path('about.html', index.about),
+    path('delivery.html', index.delivery),
 ]

@@ -1,5 +1,23 @@
-{% extends 'templates/template.html' %}
+{% extends 'template.html' %}
+{% load static %}
+
+<body>
 {% block body %}
+
+<header>
+        <div class="logo"><a href="index.html">CLAY-MADE</a></div>
+        <nav>
+            <ul>
+                <li><a href="/" class="main">Главная</a></li>
+                <li><a href="catalog.html">Магазин</a></li>
+                <li><a href="delivery.html">Доставка и оплата</a></li>
+                <li><a href="about.html" id="about">О нас</a></li>
+                <li><img src='{% static "img/Корзина.svg" %}'></li>
+                <li id="profile"><img src="img/Profile picture.png"></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="maintitle">Наша история</div>
     <div class="img">
         <img src='{% static "about1under.png" %}' width="1800" height="320">
@@ -106,5 +124,6 @@
    <button type="button"><a href="catalog.html">Перейти в каталог</a></button>
 
 {% endblock %}
+</body>
 
 </html>

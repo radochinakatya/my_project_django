@@ -2,9 +2,23 @@
 {% load static %}
 {% block body %}
 
+<header>
+        <div class="logo"><a href="index.html">CLAY-MADE</a></div>
+        <nav>
+            <ul>
+                <li><a href="/" class="main">Главная</a></li>
+                <li><a href="/catalog.html">Магазин</a></li>
+                <li><a href="delivery.html" id="delivery">Доставка и оплата</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><img src='{% static "img/Корзина.svg" %}'></li>
+                <li id="profile"><img src="img/Profile picture.png"></li>
+            </ul>
+        </nav>
+    </header>
+
 <div class="maintitle">Доставка и оплата</div>
     <div class="img">
-        <img src="img\delivery.png" width="1800" height="320">
+        <img src='{% static "img/delivery.png" %}' width="1800" height="320">
     </div>
 
 

@@ -7,6 +7,8 @@ def index(request):
 def about(request):
     return render(request, 'about.html', {})
 
-def aboutWork(request):
-    return HttpResponse("student")
+def delivery(request):
+    return render(request, 'delivery.html', {})
+
+
 

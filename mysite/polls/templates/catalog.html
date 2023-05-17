@@ -1,0 +1,503 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block body %}
+
+<header>
+        <div class="logo"><a href="index.html">CLAY-MADE</a></div>
+        <nav>
+            <ul>
+                <li><a href="/" class="main">Главная</a></li>
+                <li><a href="catalog.html" id="catalog">Магазин</a></li>
+                <li><a href="delivery.html">Доставка и оплата</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><img src='{% static "img/Корзина.svg" %}' id="cart"></li>
+                <li id="profile"><img src="img/Profile picture.png"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="maintitle">Каталог</div>
+    <div class="img">
+        <img src="img\catalog.png" width="1800" height="320">
+    </div>
+    <!--
+    <nav class="catalog_nav">
+        <a href="#" id="filter"> Все </a>
+        <a href="#" id="filter"> Тарелки </a>
+        <a href="#" id="filter"> Вазы </a>
+        <a href="#" id="filter"> Кружки </a>
+    </nav>
+-->
+
+    <div class="catalog_nav">
+        <a href="#" id="filter" class="btn active" onclick="filterSelection('all')"> Все</a>
+        <a href="#" id="filter" class="btn" onclick="filterSelection('plates')"> Тарелки</a>
+        <a href="#" id="filter" class="btn" onclick="filterSelection('vases')"> Вазы</a>
+        <a href="#" id="filter" class="btn" onclick="filterSelection('mugs')"> Кружки</a>
+    </div>
+
+    <div class="container_catalog">
+
+        <div class="catalog-1">
+            <div class="catalog-1-item">
+                <div class="filterDiv plates">
+                    <img src="img/item1.png" class="card-img" onclick="openPopup()">
+                    <img src="img/line.svg" id="line">
+
+                    <div class="textinfo">
+                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup()"> Тарелка “Конфити” с вертикальным
+                            бортиком,
+                            20 см </h2>
+                        <div class="additional">
+                            <p class="catalog-p" id="modal-text"> 1 500 ₽ </p>
+                            <img src="img/addtocard.svg" id="plus" alt="Product"
+                                onclick="addToCart('Тарелка “Конфити” с вертикальным бортиком, 20 см', 1500)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-1-item">
+                <div class="filterDiv plates">
+                    <img src="img/item2.png" class="card-img" onclick="openPopup2()">
+                    <img src="img/line.svg" id="line">
+
+                    <div class="textinfo">
+                        <h2 class="catalog-h2" id="modal-text2" onclick="openPopup2()"> Набор из 4 глубоких тарелок
+                            “Конфити” </h2>
+                        <div class="additional">
+                            <p class="catalog-p" id="modal-text2"> 6 500 ₽ </p>
+                            <img src="img/addtocard.svg" id="plus" alt="Product"
+                                onclick="addToCart('Набор из 4 глубоких тарелок “Конфити”', 6500)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-1-item">
+                <div class="filterDiv mugs">
+                    <img src="img/item3.png" class="card-img" onclick="openPopup3()">
+                    <img src="img/line.svg" id="line">
+
+                    <div class="textinfo">
+                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup3()"> Кружка “Конфити” </h2>
+                        <div class="additional">
+                            <p class="catalog-p" id="modal-text"> 1 200 ₽ </p>
+                            <img src="img/addtocard.svg" id="plus" alt="Product"
+                                onclick="addToCart('Кружка “Конфити”', 1200)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="catalog-2">
+
+            <div class="catalog-1-item">
+                <div class="filterDiv plates">
+                    <img src="img/item4.png" class="card-img" onclick="openPopup4()">
+                    <img src="img/line.svg" id="line">
+
+                    <div class="textinfo">
+                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup4()"> Глубокая тарелка “Песок” </h2>
+                        <div class="additional">
+                            <p class="catalog-p" id="modal-text"> 1 900 ₽ </p>
+                            <img src="img/addtocard.svg" id="plus" alt="Product"
+                                onclick="addToCart('Тарелка “Песок”, 20 см', 1900)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-1-item">
+                <div class="filterDiv mugs">
+                    <img src="img/item5.png" class="card-img" onclick="openPopup5()">
+                    <img src="img/line.svg" id="line">
+
+                    <div class="textinfo">
+                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup5()"> Кружка "Лицо" </h2>
+                        <div class="additional">
+                            <p class="catalog-p" id="modal-text"> 2 000 ₽ </p>
+                            <img src="img/addtocard.svg" id="plus" alt="Product"
+                                onclick="addToCart('Кружка “Лицо“', 2000)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-1-item">
+                <div class="filterDiv mugs">
+                    <img src="img/item6.png" class="card-img" onclick="openPopup6()">
+                    <img src="img/line.svg" id="line">
+
+                    <div class="textinfo">
+                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup6()"> Кружка “Дуо” черная </h2>
+                        <div class="additional">
+                            <p class="catalog-p" id="modal-text"> 1 800 ₽ </p>
+                            <img src="img/addtocard.svg" id="plus" alt="Product"
+                                onclick="addToCart('Кружка “Дуо” черная', 1800)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="catalog-3">
+
+            <div class="catalog-1-item">
+                <div class="filterDiv plates">
+                    <img src="img/item7.png" class="card-img" onclick="openPopup7()">
+                    <img src="img/line.svg" id="line">
+
+                    <div class="textinfo">
+                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup7()"> Глубокая тарелка “Кофейная”,
+                            25 см </h2>
+                        <div class="additional">
+                            <p class="catalog-p" id="modal-text"> 2 300 ₽ </p>
+                            <img src="img/addtocard.svg" id="plus" alt="Product"
+                                onclick="addToCart('Глубокая тарелка “Кофейная”', 2300)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-1-item">
+                <div class="filterDiv mugs">
+                    <img src="img/item8.png" class="card-img" onclick="openPopup8()">
+                    <img src="img/line.svg" id="line">
+
+                    <div class="textinfo">
+                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup8()"> Кружка “Дуо“ светлая </h2>
+                        <div class="additional">
+                            <p class="catalog-p" id="modal-text"> 2 000 ₽ </p>
+                            <img src="img/addtocard.svg" id="plus" alt="Product"
+                                onclick="addToCart('Кружка “Дуо“ светлая', 2000)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-1-item">
+                <div class="filterDiv mugs">
+                    <img src="img/item9.png" class="card-img" onclick="openPopup9()">
+                    <img src="img/line.svg" id="line">
+
+                    <div class="textinfo">
+                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup9()"> Набор кружек с круглыми ручками
+                        </h2>
+                        <div class="additional">
+                            <p class="catalog-p" id="modal-text"> 3 500 ₽ </p>
+                            <img src="img/addtocard.svg" id="plus" alt="Product"
+                                onclick="addToCart(' Набор кружек с круглыми ручками', 3500)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="catalog-4">
+
+            <div class="catalog-1-item">
+                <div class="filterDiv vases">
+                    <img src="img/item10.png" class="card-img" onclick="openPopup10()">
+                    <img src="img/line.svg" id="line">
+
+                    <div class="textinfo">
+                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup10()"> Ваза “Цветочная“ зеленая </h2>
+                        <div class="additional">
+                            <p class="catalog-p" id="modal-text"> 4 200 ₽ </p>
+                            <img src="img/addtocard.svg" id="plus" alt="Product"
+                                onclick="addToCart('Ваза “Цветочная“ зеленая', 4200)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-1-item">
+                <div class="filterDiv vases">
+                    <img src="img/item11.png" class="card-img" onclick="openPopup11()">
+                    <img src="img/line.svg" id="line">
+
+                    <div class="textinfo">
+                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup11()"> Ваза “Цветочная“ розовая </h2>
+                        <div class="additional">
+                            <p class="catalog-p" id="modal-text"> 4 200 ₽ </p>
+                            <img src="img/addtocard.svg" id="plus" alt="Product"
+                                onclick="addToCart('Ваза “Цветочная“ розовая', 4200)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-1-item">
+                <div class="filterDiv vases">
+                    <img src="img/item12.png" class="card-img" onclick="openPopup12()">
+                    <img src="img/line.svg" id="line">
+
+                    <div class="textinfo">
+                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup12()"> Ваза “Розовая“ </h2>
+                        <div class="additional">
+                            <p class="catalog-p" id="modal-text"> 4 200 ₽ </p>
+                            <img src="img/addtocard.svg" id="plus" alt="Product"
+                                onclick="addToCart('Ваза “Розовая“', 4200)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- HTML код для модального окна корзины-->
+        <div id="cartModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Корзина</h2>
+                <div id="cartItems"></div>
+                <div id="cartSummary"></div>
+            </div>
+        </div>
+
+
+        <!-- МОДАЛЬНЫЕ ОКНА ВСЕХ КАРТОЧЕК -->
+
+        <!-- Модальное окно карточки товара 1 -->
+
+        <div class="itemModal" id="popupFormMain">
+            <div class="item-modal-content">
+                <div class="images">
+                    <img class="item-modal-image" id="mainimg" src="img/item1.png" alt="Product Image">
+                    <img class="item-modal-image2" id="additionalimg" src="img/item1.png" alt="Product Image">
+                    <img class="item-modal-image3" id="additionalimg" src="img/item1_2.png" alt="Product Image">
+                </div>
+                <div class="description">
+                    <h2 class="item-modal-title">Тарелка “Конфити” с вертикальным бортиком,
+                        20 см</h2>
+                    <p class="item-modal-description">Брызги красной, синей, зеленой и желтой глазури работают сообща, а
+                        потому коллекция здорово впишется практически в любой интерьер</p>
+                    <p class="price-popup">1 500 ₽</p>
+                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
+                </div>
+                <span class="itemclose" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+
+        <!-- Модальное окно карточки товара 2 -->
+
+        <div class="itemModal" id="popupFormMain2">
+            <div class="item-modal-content">
+                <div class="images">
+                    <img class="item-modal-image" id="mainimg" src="img/item2.png" alt="Product Image">
+                    <img class="item-modal-image2" id="additionalimg" src="img/item2_2.png" alt="Product Image">
+                    <img class="item-modal-image3" id="additionalimg" src="img/item2_3.png" alt="Product Image">
+                </div>
+                <div class="description">
+                    <h2 class="item-modal-title">Набор из 4 глубоких тарелок “Конфити”</h2>
+                    <p class="item-modal-description">
+                        Этот стильный и практичный набор из 4 глубоких тарелок "Конфити" будет отличным дополнением к вашей посуде. Изготовленные из высококачественной керамики, эти тарелки легко впишутся в любой интерьер и будут радовать вас своей функциональностью и красивым дизайном</p>
+                    <p class="price-popup">6 500 ₽</p>
+                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
+                </div>
+                <span class="itemclose" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+
+        <!-- Модальное окно карточки товара 3 -->
+
+        <div class="itemModal" id="popupFormMain3">
+            <div class="item-modal-content">
+                <div class="images">
+                    <img class="item-modal-image" id="mainimg" src="img/item3.png" alt="Product Image">
+                    <img class="item-modal-image2" id="additionalimg" src="img/item3_2.png" alt="Product Image">
+                    <img class="item-modal-image3" id="additionalimg" src="img/item3_3.png" alt="Product Image">
+                </div>
+                <div class="description">
+                    <h2 class="item-modal-title">Кружка “Конфити”</h2>
+                    <p class="item-modal-description">Яркий и красочный аксессуар для вашей кухни или офисного стола. Кружка, изготовленная из высококачественной керамики, устойчива к высоким температурам. Дизайн кружки включает в себя разноцветные точки, которые создают веселый и игривый вид, поднимая настроение в любое время дня</p>
+                    <p class="price-popup">1 200 ₽</p>
+                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
+                </div>
+                <span class="itemclose" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+
+        <!-- Модальное окно карточки товара 4 -->
+
+        <div class="itemModal" id="popupFormMain4">
+            <div class="item-modal-content">
+                <div class="images">
+                    <img class="item-modal-image" id="mainimg" src="img/item4.png" alt="Product Image">
+                    <img class="item-modal-image2" id="additionalimg" src="img/item4_2.png" alt="Product Image">
+                </div>
+                <div class="description">
+                    <h2 class="item-modal-title">Глубокая тарелка “Песок”</h2>
+                    <p class="item-modal-description">Глубокая тарелка добавит нотку природной красоты и уюта в вашу кухню. Каждая тарелка уникальна и имеет свой неповторимый оттенок "песочного" цвета</p>
+                    <p class="price-popup">1 900 ₽</p>
+                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
+                </div>
+                <span class="itemclose" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+
+        <!-- Модальное окно карточки товара 5 -->
+
+        <div class="itemModal" id="popupFormMain5">
+            <div class="item-modal-content">
+                <div class="images">
+                    <img class="item-modal-image" id="mainimg" src="img/item5.png" alt="Product Image">
+                    <img class="item-modal-image2" id="additionalimg" src="img/item5.png" alt="Product Image">
+                    <img class="item-modal-image3" id="additionalimg" src="img/item5_2.png" alt="Product Image">
+                </div>
+                <div class="description">
+                    <h2 class="item-modal-title">Кружка "Лицо"</h2>
+                    <p class="item-modal-description">Эта уникальная керамическая кружка с лицом станет ярким акцентом в вашей коллекции посуды. Ее необычный дизайн и яркий цвет добавят в ваш день заряд позитива и хорошего настроения.</p>
+                    <p class="price-popup">2 000 ₽</p>
+                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
+                </div>
+                <span class="itemclose" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+
+        <!-- Модальное окно карточки товара 6 -->
+
+        <div class="itemModal" id="popupFormMain6">
+            <div class="item-modal-content">
+                <div class="images">
+                    <img class="item-modal-image" id="mainimg" src="img/item6.png" alt="Product Image">
+                    <img class="item-modal-image2" id="additionalimg" src="img/item6_2.png" alt="Product Image">
+                </div>
+                <div class="description">
+                    <h2 class="item-modal-title">Кружка “Дуо” черная</h2>
+                    <p class="item-modal-description">Кружка "Дуо" черного цвета - это идеальное решение для любителей минималистичного стиля и эстетической простоты. Её двухцветный дизайн, сочетающий глубокий черный и чистый белый, позволит вам насладиться чашкой горячего напитка в стильном и современном исполнении</p>
+                    <p class="price-popup">1 800 ₽</p>
+                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
+                </div>
+                <span class="itemclose" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+
+        <!-- Модальное окно карточки товара 7 -->
+
+        <div class="itemModal" id="popupFormMain7">
+            <div class="item-modal-content">
+                <div class="images">
+                    <img class="item-modal-image" id="mainimg" src="img/item7.png" alt="Product Image">
+                    <img class="item-modal-image2" id="additionalimg" src="img/item7_2.png" alt="Product Image">
+                    <img class="item-modal-image3" id="additionalimg" src="img/item7_3.png" alt="Product Image">
+                    <img class="item-modal-image4" id="additionalimg" src="img/item7_4.png" alt="Product Image">
+                </div>
+                <div class="description">
+                    <h2 class="item-modal-title">Глубокая тарелка “Кофейная”, 25 см</h2>
+                    <p class="item-modal-description">Утонченный дизайн и высокое качество материалов делают эту глубокую тарелку "Кофейная" идеальным выбором для завтрака в постели или обеда с друзьями. Ее размер в 25 см позволяет наслаждаться большими порциями любимых блюд, а устойчивый керамический материал обеспечивает долговечность и надежность в использовании</p>
+                    <p class="price-popup">2 300 ₽</p>
+                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
+                </div>
+                <span class="itemclose" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+
+        <!-- Модальное окно карточки товара 8 -->
+
+        <div class="itemModal" id="popupFormMain8">
+            <div class="item-modal-content">
+                <div class="images">
+                    <img class="item-modal-image" id="mainimg" src="img/item8.png" alt="Product Image">
+                    <img class="item-modal-image2" id="additionalimg" src="img/item8_2.png" alt="Product Image">
+                </div>
+                <div class="description">
+                    <h2 class="item-modal-title">Кружка “Дуо“ светлая</h2>
+                    <p class="item-modal-description">Сочетание светлого цвета и эргономичного дизайна делает эту кружку удобной в использовании и приятной на ощупь</p>
+                    <p class="price-popup">2 000 ₽</p>
+                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
+                </div>
+                <span class="itemclose" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+
+        <!-- Модальное окно карточки товара 9 -->
+
+        <div class="itemModal" id="popupFormMain9">
+            <div class="item-modal-content">
+                <div class="images">
+                    <img class="item-modal-image" id="mainimg" src="img/item9.png" alt="Product Image">
+                    <img class="item-modal-image2" id="additionalimg" src="img/item9_2.png" alt="Product Image">
+                    <img class="item-modal-image3" id="additionalimg" src="img/item9_3.png" alt="Product Image">
+                    <img class="item-modal-image4" id="additionalimg" src="img/item9_4.png" alt="Product Image">
+                </div>
+                <div class="description">
+                    <h2 class="item-modal-title">Набор кружек с круглыми ручками</h2>
+                    <p class="item-modal-description">Набор включает в себя две кружки разных цветов, которые прекрасно сочетаются между собой. Круглые ручки обеспечивают удобство и комфорт в использовании</p>
+                    <p class="price-popup">3 500 ₽</p>
+                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
+                </div>
+                <span class="itemclose" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+
+        <!-- Модальное окно карточки товара 10 -->
+
+        <div class="itemModal" id="popupFormMain10">
+            <div class="item-modal-content">
+                <div class="images">
+                    <img class="item-modal-image" id="mainimg" src="img/item10.png" alt="Product Image">
+                    <img class="item-modal-image2" id="additionalimg" src="img/item10_2.png" alt="Product Image">
+                    <img class="item-modal-image3" id="additionalimg" src="img/item10_3.png" alt="Product Image">
+                </div>
+                <div class="description">
+                    <h2 class="item-modal-title">Ваза “Цветочная“ зеленая</h2>
+                    <p class="item-modal-description">Эта ваза изготовлена из качественных материалов, которые обеспечивают долговечность и прочность изделия. Зеленый цвет вазы идеально подойдет для создания атмосферы природы в доме</p>
+                    <p class="price-popup">4 200 ₽</p>
+                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
+                </div>
+                <span class="itemclose" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+
+         <!-- Модальное окно карточки товара 11 -->
+
+         <div class="itemModal" id="popupFormMain11">
+            <div class="item-modal-content">
+                <div class="images">
+                    <img class="item-modal-image" id="mainimg" src="img/item11.png" alt="Product Image">
+                    <img class="item-modal-image2" id="additionalimg" src="img/item11_2.png" alt="Product Image">
+                    <img class="item-modal-image3" id="additionalimg" src="img/item11_3.png" alt="Product Image">
+                </div>
+                <div class="description">
+                    <h2 class="item-modal-title">Ваза “Цветочная“ розовая</h2>
+                    <p class="item-modal-description">Прекрасная ваза "Цветочная" розового цвета сделает любой букет ярче и неповторимым. Изящный и красивый дизайн вазы позволит ей гармонично вписаться в любой интерьер, придав ему уют и элегантность</p>
+                    <p class="price-popup">4 200 ₽</p>
+                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
+                </div>
+                <span class="itemclose" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+
+        <!-- Модальное окно карточки товара 12 -->
+
+        <div class="itemModal" id="popupFormMain12">
+            <div class="item-modal-content">
+                <div class="images">
+                    <img class="item-modal-image" id="mainimg" src="img/item12.png" alt="Product Image">
+                    <img class="item-modal-image2" id="additionalimg" src="img/item12_2.png" alt="Product Image">
+                </div>
+                <div class="description">
+                    <h2 class="item-modal-title">Ваза “Розовая“</h2>
+                    <p class="item-modal-description">Ваза выполнена из керамики высокого качества и окрашена в нежный розовый цвет. Ее уникальный дизайн и изысканные формы подчеркнут красоту любого букета цветов, а также прекрасно смотрятся сами по себе, добавляя изящества и уюта в комнату. Размер вазы позволяет использовать ее как для небольших цветочных композиций, так и для более крупных букетов</p>
+                    <p class="price-popup">4 200 ₽</p>
+                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
+                </div>
+                <span class="itemclose" onclick="closePopup()">&times;</span>
+            </div>
+        </div>
+{% endblock %}
+
+
+    <footer>
+        <div class="logo2">CLAY-MADE</div>
+    </footer>
+
+</body>
+
+</html>
