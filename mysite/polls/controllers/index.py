@@ -10,5 +10,8 @@ def about(request):
 def delivery(request):
     return render(request, 'delivery.html', {})
 
+def catalog(request):
+    return render(request, 'catalog.html', {})
+
 
 

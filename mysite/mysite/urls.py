@@ -23,4 +23,5 @@ urlpatterns = [
     path('', index.index),
     path('about.html', index.about),
     path('delivery.html', index.delivery),
+    path('catalog.html', index.catalog),
 ]
