@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from polls.controllers import index
+from polls.controllers import mailing
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index.html', index.index),
+    path('signin.html', index.signin),
     path('about.html', index.about),
     path('delivery.html', index.delivery),
     path('catalog.html', index.catalog),
+    path('mailing/', mailing.create),
 ]

@@ -14,7 +14,7 @@
             <li><a href="delivery.html">Доставка и оплата</a></li>
             <li><a href="about.html">О нас</a></li>
             <li><img src='{% static "img/Корзина.svg" %}'></li>
-            <li id="signIn" onclick="signinopenPopup()">Вход / Регистрация</li>
+            <li id="profile"><img src='{% static "img/Profile picture.png" %}'></li>
 <!--             <li id="profile"><img src="img/Profile picture.png"></li> &ndash;&gt;-->
         </ul>
     </nav>
@@ -74,8 +74,8 @@
 
     <button type="button"><a href="catalog.html">Перейти в каталог</a></button>
 
-    <form class="input" method="post" action="../mailing/">
-        {% csrf_token %}
+    <div class="input" method="post" action="mailing/">
+        {%csrf_token %}
         <div class="inputcontent" >
             <div class="emailtext">
                 Подпишись на рассылку, чтобы первым узнавать о новых коллекциях
@@ -86,7 +86,7 @@
                 <input id="emailSubmit" type="image" src='{% static "img/right.png" %}' width="26px" height="18px">
             </div>
         </div>
-    </form>
+    </div>
 
     <!-- код для модального окна рассылки-->
     <div id="inputModal" class="modal">
@@ -108,7 +108,7 @@
                 <label for="password">Пароль</label>
                 <input type="password" id="password" name="password">
                 <div class="buttons">
-                  <button type="submit" id="signbutton"><a href="signin.html" class="buttonsignin">Войти</a></button>
+                  <button type="submit" id="signbutton">Войти</button>
                   <a id="signUp" onclick="signUpopenPopup()">Зарегистрироваться</a>
                 </div>
               </form>

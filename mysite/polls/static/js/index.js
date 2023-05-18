@@ -146,13 +146,13 @@ function signUpopenPopup() {
   signinclosePopup()
   flag = 3;
    if(flag == 3) document.getElementById("signUp").style.display = "block";
-  flag = 1;
+  flag = 4;
 }
 
 
 function closesignUpPopup() {
   document.getElementById("signUp").style.display = "none";
-  flag = 0;
+  flag = 3;
 }
 
 
@@ -161,6 +161,8 @@ window.onclick = function(event) {
     signinclosePopup();
   }
 }
+
+
 
 
 

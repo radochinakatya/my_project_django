@@ -1,7 +1,6 @@
 
 
 // JavaScript код для добавления товара в корзину
-/*alert("CRINGE");*/
 const cart = [];
 
 function addToCart(product, price, image) {

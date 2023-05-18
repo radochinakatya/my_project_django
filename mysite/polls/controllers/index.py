@@ -1,4 +1,6 @@
 from django.http import HttpResponse
+
+
 from django.shortcuts import redirect, render
 
 def index(request):
@@ -9,6 +11,9 @@ def about(request):
 
 def delivery(request):
     return render(request, 'delivery.html', {})
+def signin(request):
+    return render(request, 'signin.html', {})
+
 
 def catalog(request):
     return render(request, 'catalog.html', {})

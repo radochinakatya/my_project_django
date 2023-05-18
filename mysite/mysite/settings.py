@@ -131,6 +131,8 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, "/static/")
 
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8000']
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
