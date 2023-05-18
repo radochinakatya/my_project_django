@@ -142,6 +142,27 @@ function signinclosePopup() {
   flag = 0;
 }
 
+function signUpopenPopup() {
+  signinclosePopup()
+  flag = 3;
+  lol();
+}
+
+function lol(){
+   if(flag == 3) document.getElementById("signUp").style.display = "block";
+  flag = 1;
+}
+/*if (flag == 3){
+  function LOL();
+}*/
+
+
+function closesignUpPopup() {
+  document.getElementById("signUp").style.display = "none";
+  flag = 0;
+}
+
+
 window.onclick = function(event) {
   if (event.target == signInpopup) {
     signinclosePopup();

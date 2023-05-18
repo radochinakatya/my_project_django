@@ -108,13 +108,36 @@
                 <input type="password" id="password" name="password">
                 <div class="buttons">
                   <button type="submit" id="signbutton">Войти</button>
-                  <a href="" id="signUp" onclick="opensignUpPopup()">Зарегистрироваться</a>
+                  <a id="signUp" onclick="signUpopenPopup()">Зарегистрироваться</a>
                 </div>
               </form>
-              <span class="signInclose" onclick="closePopup()">&times;</span>
+              <span class="signInclose" onclick="signinclosePopup()">&times;</span>
         </div>
 
     </div>
+
+    <div class="signUp-modal" id="signUppopup">
+        <div class="signUp-modal-content">
+          <form id="signup-form">
+            <h2 class="signUp-modal-title">Регистрация</h2>
+
+            <label for="email_or_phone">Email / Номер телефона</label>
+            <input type="text" id="email" name="email_or_phone">
+
+            <label for="password">Пароль</label>
+            <input type="password" id="password1" name="password">
+
+            <label for="confirm_password">Подтвердите пароль</label>
+            <input type="password" id="confirm_password" name="confirm_password">
+
+            <div class="buttons">
+              <button type="submit" id="signup-button">Зарегистрироваться</button>
+              <a href="" id="signUp2" onclick="signUpopenPopup()">Войти</a>
+            </div>
+          </form>
+          <span class="signUpclose" onclick="closesignUpPopup()">&times;</span>
+        </div>
+      </div>
 
 {% endblock %}
 </body>
