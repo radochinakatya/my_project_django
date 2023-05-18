@@ -17,4 +17,4 @@ ____
 |--------------------------------------------|:--------------------------------:|--------------------------------------------:|
 | ![Alt-текст](polls/static/img/item6_2.png) |           ![Alt-текст](polls/static/img/favicon.ico)     |  ![Alt-текст](polls/static/img/item7_4.png) |
 
-База данных: [dbdiagram](https://dbdiagram.io/d/644eaf35dca9fb07c4485186)
+## База данных: [dbdiagram](https://dbdiagram.io/d/644eaf35dca9fb07c4485186)
