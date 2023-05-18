@@ -20,7 +20,7 @@ from polls.controllers import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index.index),
+    path('index.html', index.index),
     path('about.html', index.about),
     path('delivery.html', index.delivery),
     path('catalog.html', index.catalog),
