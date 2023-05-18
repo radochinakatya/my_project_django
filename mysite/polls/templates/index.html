@@ -14,7 +14,7 @@
             <li><a href="delivery.html">Доставка и оплата</a></li>
             <li><a href="about.html">О нас</a></li>
             <li><img src='{% static "img/Корзина.svg" %}'></li>
-            <li id="signIn" onclick="openPopup()">Вход / Регистрация</li>
+            <li id="signIn" onclick="signinopenPopup()">Вход / Регистрация</li>
 <!--             <li id="profile"><img src="img/Profile picture.png"></li> &ndash;&gt;-->
         </ul>
     </nav>
@@ -39,8 +39,8 @@
         </div>
 
         <!-- Кнопки-стрелочки -->
-        <a class="previous" onclick="previousSlide()"><img src='{% static "left.svg" %}'></a>
-        <a class="next" onclick="nextSlide()"><img src='{% static "right.svg" %}'></a>
+        <a class="previous" onclick="previousSlide()"><img src='{% static "img/left.svg" %}'></a>
+        <a class="next" onclick="nextSlide()"><img src='{% static "img/Right.svg" %}'></a>
     </div>
 
 
@@ -74,18 +74,48 @@
 
     <button type="button"><a href="catalog.html">Перейти в каталог</a></button>
 
-   <div class="input">
+    <div class="input">
         <div class="inputcontent">
-            <div class="emailtext">Подпишись на рассылку, чтобы первым узнавать о новых коллекциях
+            <div class="emailtext">
+                Подпишись на рассылку, чтобы первым узнавать о новых коллекциях
             </div>
             <div class="inputEmail">
-                <a href="mailto: 11111@gmail.com">
-                </a>
-                <input type="email" placeholder="E-mail">
-                <input type=image src='{% static "img/Right.png" %}' width="26px" height="18px">
+                <a href="mailto: 11111@gmail.com"></a>
+                <input id="emailInput" type="email" placeholder="E-mail">
+                <input id="emailSubmit" type="image" src='{% static "img/right.png" %}' width="26px" height="18px">
             </div>
         </div>
+    </div>
+
+    <!-- код для модального окна рассылки-->
+    <div id="inputModal" class="modal">
+        <div class="input-modal-content">
+            <span class="close" >&times;</span>
+            <h2>Вы подписались на рассылку!</h2>
         </div>
+    </div>
+
+    <!-- модальное окно входа -->
+
+    <div class="signIn-modal" id="signInpopup">
+        <div class="signIn-modal-content">
+            <form id="popup-form">
+                <h2 class="signIn-modal-title">Вход</h2>
+
+                <label for="email_or_phone">Email / Номер телефона</label>
+                <input type="text" id="email_or_phone" name="email_or_phone" >
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password">
+                <div class="buttons">
+                  <button type="submit" id="signbutton">Войти</button>
+                  <a href="" id="signUp" onclick="opensignUpPopup()">Зарегистрироваться</a>
+                </div>
+              </form>
+              <span class="signInclose" onclick="closePopup()">&times;</span>
+        </div>
+
+    </div>
+
 {% endblock %}
 </body>
 

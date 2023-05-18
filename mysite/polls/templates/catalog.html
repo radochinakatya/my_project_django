@@ -14,7 +14,7 @@
                 <li><a href="delivery.html">Доставка и оплата</a></li>
                 <li><a href="about.html">О нас</a></li>
                 <li><img src='{% static "img/Корзина.svg" %}' id="cart"></li>
-                <li id="profile"><img src="img/Profile picture.png"></li>
+                <li id="profile"><img src='{% static "img/Profile picture.png" %}'></li>
             </ul>
         </nav>
     </header>
@@ -44,7 +44,7 @@
         <div class="catalog-1">
             <div class="catalog-1-item">
                 <div class="filterDiv plates">
-                    <img src='{% static "img/item1.png" %}' class="card-img" onclick="openPopup()">
+                    <img src='{% static "img/item1.png" %}' class="card-img" onclick="openPopup1()">
                     <img src='{% static "img/line.svg" %}' id="line">
 
                     <div class="textinfo">
@@ -349,7 +349,7 @@
         <div class="itemModal" id="popupFormMain5">
             <div class="item-modal-content">
                 <div class="images">
-                    <img class="item-modal-image" id="mainimg" src='{% static "img/5.png" %}' alt="Product Image">
+                    <img class="item-modal-image" id="mainimg" src='{% static "img/item5.png" %}' alt="Product Image">
                     <img class="item-modal-image2" id="additionalimg" src='{% static "img/item5.png" %}' alt="Product Image">
                     <img class="item-modal-image3" id="additionalimg" src='{% static "img/item5_2.png" %}' alt="Product Image">
                 </div>

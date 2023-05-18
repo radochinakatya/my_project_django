@@ -1,7 +1,7 @@
 // Слайдер:
 
-
-
+let flag = 0
+/*alert("TRASH");*/
 /* Устанавливаем стартовый индекс слайда по умолчанию: */
 let slideIndex = 1;
 /* Вызываем функцию, которая реализована ниже: */
@@ -50,19 +50,18 @@ let timer = setInterval(function () {
 }, 4500);
 
 
-// Поп ап:
-
+// Поп ап рассылки:
 
 
 const emailSubmit = document.getElementById('emailSubmit');
 const inputModal = document.getElementById('inputModal');
-const closeButton = inputModal.querySelector('.close');
+const closeButton2 = inputModal.querySelector('.close');
 
 emailSubmit.addEventListener('click', () => {
   inputModal.style.display = 'block';
 });
 
-closeButton.addEventListener('click', () => {
+closeButton2.addEventListener('click', () => {
   inputModal.style.display = 'none';
 });
 
@@ -73,7 +72,7 @@ window.onclick = function (event) {
 };
 
 
-closeButton.addEventListener('click', () => {
+closeButton2.addEventListener('click', () => {
   inputModal.style.display = 'none';
 });
 
@@ -131,21 +130,21 @@ for (var i = 0; i < btns.length; i++) {
 
 // попап для входа
 
-flag = 0
 
-function openPopup() {
+
+function signinopenPopup() {
   if(flag == 0) document.getElementById("signInpopup").style.display = "block";
   flag = 1;
 }
 
-function closePopup() {
+function signinclosePopup() {
   document.getElementById("signInpopup").style.display = "none";
   flag = 0;
 }
 
 window.onclick = function(event) {
   if (event.target == signInpopup) {
-    closePopup();
+    signinclosePopup();
   }
 }
 

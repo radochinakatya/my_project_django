@@ -1,7 +1,7 @@
 
 
 // JavaScript код для добавления товара в корзину
-
+/*alert("CRINGE");*/
 const cart = [];
 
 function addToCart(product, price, image) {
@@ -55,11 +55,7 @@ cartIcon.addEventListener('click', () => {
 });
 
 // закрываем по нажатию на фон
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-}
+
 
 function showCartItems() {
   let cartHTML = '';
@@ -84,7 +80,9 @@ closeButton.addEventListener('click', () => {
   cartModal.style.display = 'none';
 });
 
+/*window.onclick = function (event) {
 
+}*/
 
 
 // модальные окна карточек товара
@@ -142,7 +140,7 @@ flag = 0
 
 // открытие всех карточек
 
-function openPopup() {
+function openPopup1() {
   if(flag == 0) document.getElementById("popupFormMain").style.display = "block";
   flag = 1;
 }
@@ -223,6 +221,9 @@ function closePopup() {
 // закрытие по клику на фон для всех карточек
 
 window.onclick = function(event) {
+  if (event.target == cartModal) {
+    cartModal.style.display = 'none';
+  }
   if (event.target == popupFormMain) {
     closePopup();
   }
