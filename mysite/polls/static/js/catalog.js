@@ -23,25 +23,21 @@ function addToCart(product, price, image) {
 
 }
 
-function showCart() {
-  const cartElement = document.getElementById('cart');
-  let cartHTML = '';
+function removeCartItem(productName) {
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].product === productName) {
+      if (cart[i].count > 1) {
+        cart[i].count--; // Уменьшаем количество товара
+      } else {
+        cart.splice(i, 1); // Если количество равно 1, удаляем товар из корзины метод сплайс:(array.splice(start, deleteCount, item1, item2, ...))
 
-  if (cart.length === 0) {
-    cartHTML = '<p>Корзина пуста</p>';
-  } else {
-    cartHTML = '<ul>';
-    for (let item of cart) {
-      cartHTML += `<li><img src="${item.image}" width="50"> ${item.product} - ${item.price} руб. x ${item.count}</li>`;
-      total += item.price * item.count
+      }
+      break;
     }
-    cartHTML += '</ul>';
   }
-
-  cartElement.innerHTML = cartHTML;
 }
 
-showCart(); // вызываем функцию для отображения корзины при загрузке страницы (модальное окно)
+
 
 const cartIcon = document.getElementById('cart');
 const cartModal = document.getElementById('cartModal');
@@ -65,7 +61,7 @@ function showCartItems() {
     cartHTML = '<ul>';
     for (let item of cart) {
 
-      cartHTML += `<li><img src="${item.image}" width="50"> ${item.product} - ${item.price} руб. x ${item.count}</li>`;
+      cartHTML += `<li><img src="${item.image}" width="50"> ${item.product} - ${item.price} руб. x ${item.count} <button class="remove-item" data-product="${item.product}">Удалить</button></li>`;
 
     }
     cartHTML += '</ul>';
@@ -74,6 +70,13 @@ function showCartItems() {
   cartItems.innerHTML = cartHTML;
 }
 
+cartItems.addEventListener('click', function(event) {
+  if (event.target.classList.contains('remove-item')) {
+    const productName = event.target.dataset.product;
+    removeCartItem(productName);
+    showCartItems(); // Обновляем отображение корзины после удаления товара
+  }
+});
 
 closeButton.addEventListener('click', () => {
   cartModal.style.display = 'none';

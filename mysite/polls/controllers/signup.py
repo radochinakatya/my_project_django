@@ -6,7 +6,7 @@ def create(request):
     signup = Signup()
     signup.text = request.POST.get("name")
     signup.email = request.POST.get("email_2")
-    signup.tel = request.POST.get("phone")
+    signup.tel = request.POST.get("phonenumber")
     signup.password = request.POST.get("password")
     signup.save()
 

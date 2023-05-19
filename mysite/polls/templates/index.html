@@ -118,9 +118,10 @@
 
     </div>
 
-    <div class="signUp-modal" id="signUppopup" method="post" action="../signup/">
+    <div class="signUp-modal" id="signUppopup" >
         <div class="signUp-modal-content">
-          <form id="signup-form">
+          <form id="signup-form" method="post" action="../signup/">
+              {% csrf_token %}
             <h2 class="signUp-modal-title">Регистрация</h2>
 
             <label for="name">Ваше имя</label>
@@ -129,8 +130,8 @@
             <label for="email">Email</label>
             <input type="text" id="email" name="email_2">
 
-            <label for="phone">Телефон</label>
-            <input type="tel" id="phone" name="phone">
+            <label for="phonenumber">Телефон</label>
+            <input type="tel" id="phonenumber" name="phonenumber">
 
             <label for="password">Пароль</label>
             <input type="password" id="password1" name="password">
