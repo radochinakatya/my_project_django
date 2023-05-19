@@ -264,7 +264,10 @@ label {
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="tel"]
+{
+    color: black;
     width: 520px;
     padding: 10px;
     border-radius: 5px;
@@ -274,7 +277,8 @@ input[type="password"] {
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="tel"]{
     margin-bottom: 20px;
 }
 
@@ -293,6 +297,26 @@ input[type="email"] {
     opacity: 100%;
 }
 
+#signup-button{
+    border-radius: 10px;
+    border: 0;
+    height: 76px;
+    width: 340px;
+    font-weight: normal;
+    font-size: 24px;
+    background-color: white;
+    border: 1.5px solid black;
+    color: black;
+    margin-top: 40px;
+    margin-left: 0;
+    display: block;
+    cursor: pointer;
+}
+
+#signup-button:hover{
+    background-color: black;
+    color: white;
+}
 
 .buttons {
     display: flex;

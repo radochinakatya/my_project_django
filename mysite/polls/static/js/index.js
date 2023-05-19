@@ -133,6 +133,7 @@ for (var i = 0; i < btns.length; i++) {
 
 
 function signinopenPopup() {
+  closesignUpPopup()
   if(flag == 0) document.getElementById("signInpopup").style.display = "block";
   flag = 1;
 }
@@ -145,20 +146,25 @@ function signinclosePopup() {
 function signUpopenPopup() {
   signinclosePopup()
   flag = 3;
-   if(flag == 3) document.getElementById("signUp").style.display = "block";
-  flag = 4;
+   if(flag == 3) document.getElementById("signUppopup").style.display = "block";
+  flag = 0;
 }
 
 
+
+
 function closesignUpPopup() {
-  document.getElementById("signUp").style.display = "none";
-  flag = 3;
+  document.getElementById("signUppopup").style.display = "none";
+  flag = 0;
 }
 
 
 window.onclick = function(event) {
   if (event.target == signInpopup) {
     signinclosePopup();
+  }
+   if (event.target == signUppopup) {
+     closesignUpPopup();
   }
 }
 

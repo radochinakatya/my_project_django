@@ -98,6 +98,7 @@
 
     <!-- модальное окно входа -->
 
+
     <div class="signIn-modal" id="signInpopup">
         <div class="signIn-modal-content">
             <form id="popup-form">
@@ -117,23 +118,26 @@
 
     </div>
 
-    <div class="signUp-modal" id="signUppopup">
+    <div class="signUp-modal" id="signUppopup" method="post" action="../signup/">
         <div class="signUp-modal-content">
           <form id="signup-form">
             <h2 class="signUp-modal-title">Регистрация</h2>
 
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name">
+
             <label for="email">Email</label>
-            <input type="text" id="email" name="email_or_phone">
+            <input type="text" id="email" name="email_2">
+
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone" name="phone">
 
             <label for="password">Пароль</label>
             <input type="password" id="password1" name="password">
 
-            <label for="confirm_password">Подтвердите пароль</label>
-            <input type="password" id="confirm_password" name="confirm_password">
-
             <div class="buttons">
               <button type="submit" id="signup-button">Зарегистрироваться</button>
-              <a href="" id="signUp2" onclick="signinopenPopup()">Войти</a>
+              <a id="signUp2" onclick="signinopenPopup()">Войти</a>
             </div>
           </form>
           <span class="signUpclose" onclick="closesignUpPopup()">&times;</span>

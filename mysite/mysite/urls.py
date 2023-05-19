@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from polls.controllers import index
 from polls.controllers import mailing
+from polls.controllers import signup
 
 
 urlpatterns = [
@@ -27,4 +28,5 @@ urlpatterns = [
     path('delivery.html', index.delivery),
     path('catalog.html', index.catalog),
     path('mailing/', mailing.create),
+    path('signup/', signup.create),
 ]
