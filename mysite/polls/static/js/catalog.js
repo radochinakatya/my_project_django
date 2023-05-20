@@ -31,10 +31,11 @@ function removeCartItem(productName) {
   for (let i = 0; i < cart.length; i++) {
     if (cart[i].product === productName) {
       if (cart[i].count > 1) {
+        total-=cart[i].price;
         cart[i].count--; // Уменьшаем количество товара
       } else {
+        total-=cart[i].price;
         cart.splice(i, 1); // Если количество равно 1, удаляем товар из корзины метод сплайс:(array.splice(start, deleteCount, item1, item2, ...))
-
       }
       break;
     }
