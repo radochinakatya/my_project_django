@@ -10,3 +10,6 @@ class Signup(models.Model):
     email_2 = models.CharField(max_length=100)
     phonenumber = models.CharField(max_length=20)
     password = models.CharField(max_length=80)
+
+class Slider(models.Model):
+    image = models.TextField()
