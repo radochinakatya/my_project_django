@@ -6,13 +6,13 @@
 {% block body %}
 
 <header>
-        <div class="logo"><a href="index.html">CLAY-MADE</a></div>
+        <div class="logo"><a href="../index/">CLAY-MADE</a></div>
         <nav>
             <ul>
-                <li><a href="index.html" class="main">Главная</a></li>
-                <li><a href="catalog.html" id="catalog">Магазин</a></li>
-                <li><a href="delivery.html">Доставка и оплата</a></li>
-                <li><a href="about.html">О нас</a></li>
+                <li><a href="../index/" class="main">Главная</a></li>
+                <li><a href="../catalog/" id="catalog">Магазин</a></li>
+                <li><a href="../delivery.html">Доставка и оплата</a></li>
+                <li><a href="../about.html">О нас</a></li>
                 <li><img src='{% static "img/Корзина.svg" %}' id="cart"></li>
                 <li id="profile"><img src='{% static "img/Profile picture.png" %}'></li>
             </ul>
@@ -39,218 +39,261 @@
         <a href="#" id="filter" class="btn" onclick="filterSelection('mugs')"> Кружки</a>
     </div>
 
-    <div class="container_catalog">
+<div class="container_catalog">
+    {% for item in items.all %}
 
-        <div class="catalog-1">
-            <div class="catalog-1-item">
-                <div class="filterDiv plates">
-                    <img src='{% static "img/item1.png" %}' class="card-img" onclick="openPopup1()">
+            <div class="catalog-1-item" >
+<!--                <div class="filterDiv plates">-->
+                    <img src={{ item.image }} class="card-img" id={{ item.id_item }} onclick="product(event)">
                     <img src='{% static "img/line.svg" %}' id="line">
 
                     <div class="textinfo">
-                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup()"> Тарелка “Конфити” с вертикальным
-                            бортиком,
-                            20 см </h2>
+                        <h2 class="catalog-h2" id="modal-text"  onclick="product(event)">{{ item.name }}</h2>
                         <div class="additional">
-                            <p class="catalog-p" id="modal-text"> 1 500 ₽ </p>
+                            <p class="catalog-p" id="modal-text">{{ item.price }} ₽</p>
                             <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"
-                                onclick="addToCart('Тарелка “Конфити” с вертикальным бортиком, 20 см', 1500)">
+                                 onclick="addToCart('{{ item.name }}', {{ item.price }})">
                         </div>
-                    </div>
-                </div>
+                   </div>
             </div>
 
-            <div class="catalog-1-item">
-                <div class="filterDiv plates">
-                    <img src='{% static "img/item2.png" %}' class="card-img" onclick="openPopup2()">
-                    <img src='{% static "img/line.svg" %}' id="line">
+    <!-- Модальное окно карточки товара 1 -->
 
-                    <div class="textinfo">
-                        <h2 class="catalog-h2" id="modal-text2" onclick="openPopup2()"> Набор из 4 глубоких тарелок
-                            “Конфити” </h2>
-                        <div class="additional">
-                            <p class="catalog-p" id="modal-text2"> 6 500 ₽ </p>
-                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"
-                                onclick="addToCart('Набор из 4 глубоких тарелок “Конфити”', 6500)">
-                        </div>
-                    </div>
+        <div class="itemModal" id={{ item.id_popup }}>
+            <div class="item-modal-content">
+                <div class="images">
+                    <img class="item-modal-image" id="mainimg" src={{ item.image }} alt="Product Image">
+                    <img class="item-modal-image2" id="additionalimg" src={{ item.add_image1 }} alt="Product Image">
+                    <img class="item-modal-image3" id="additionalimg" src={{ item.add_image2 }} alt="Product Image">
+                    <img class="item-modal-image3" id="additionalimg" src={{ item.add_image3 }} alt="Product Image">
                 </div>
-            </div>
-
-            <div class="catalog-1-item">
-                <div class="filterDiv mugs">
-                    <img src='{% static "img/item3.png" %}' class="card-img" onclick="openPopup3()">
-                    <img src='{% static "img/line.svg" %}' id="line">
-
-                    <div class="textinfo">
-                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup3()"> Кружка “Конфити” </h2>
-                        <div class="additional">
-                            <p class="catalog-p" id="modal-text"> 1 200 ₽ </p>
-                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"
-                                onclick="addToCart('Кружка “Конфити”', 1200)">
-                        </div>
-                    </div>
+                <div class="description">
+                    <h2 class="item-modal-title">{{ item.name }}</h2>
+                    <p class="item-modal-description">{{ item.description }}</p>
+                    <p class="price-popup">{{ item.price }} ₽</p>
+                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
                 </div>
-            </div>
-
-        </div>
-
-        <div class="catalog-2">
-
-            <div class="catalog-1-item">
-                <div class="filterDiv plates">
-                    <img src='{% static "img/item4.png" %}' class="card-img" onclick="openPopup4()">
-                    <img src='{% static "img/line.svg" %}' id="line">
-
-                    <div class="textinfo">
-                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup4()"> Глубокая тарелка “Песок” </h2>
-                        <div class="additional">
-                            <p class="catalog-p" id="modal-text"> 1 900 ₽ </p>
-                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"
-                                onclick="addToCart('Тарелка “Песок”, 20 см', 1900)">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="catalog-1-item">
-                <div class="filterDiv mugs">
-                    <img src='{% static "img/item5.png" %}' class="card-img" onclick="openPopup5()">
-                    <img src='{% static "img/line.svg" %}' id="line">
-
-                    <div class="textinfo">
-                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup5()"> Кружка "Лицо" </h2>
-                        <div class="additional">
-                            <p class="catalog-p" id="modal-text"> 2 000 ₽ </p>
-                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"
-                                onclick="addToCart('Кружка “Лицо“', 2000)">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="catalog-1-item">
-                <div class="filterDiv mugs">
-                    <img src='{% static "img/item6.png" %}' class="card-img" onclick="openPopup6()">
-                    <img src='{% static "img/line.svg" %}' id="line">
-
-                    <div class="textinfo">
-                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup6()"> Кружка “Дуо” черная </h2>
-                        <div class="additional">
-                            <p class="catalog-p" id="modal-text"> 1 800 ₽ </p>
-                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"
-                                onclick="addToCart('Кружка “Дуо” черная', 1800)">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="catalog-3">
-
-            <div class="catalog-1-item">
-                <div class="filterDiv plates">
-                    <img src='{% static "img/item7.png" %}' class="card-img" onclick="openPopup7()">
-                    <img src='{% static "img/line.svg" %}' id="line">
-
-                    <div class="textinfo">
-                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup7()"> Глубокая тарелка “Кофейная”,
-                            25 см </h2>
-                        <div class="additional">
-                            <p class="catalog-p" id="modal-text"> 2 300 ₽ </p>
-                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"
-                                onclick="addToCart('Глубокая тарелка “Кофейная”', 2300)">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="catalog-1-item">
-                <div class="filterDiv mugs">
-                    <img src='{% static "img/item8.png" %}' class="card-img" onclick="openPopup8()">
-                    <img src='{% static "img/line.svg" %}' id="line">
-
-                    <div class="textinfo">
-                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup8()"> Кружка “Дуо“ светлая </h2>
-                        <div class="additional">
-                            <p class="catalog-p" id="modal-text"> 2 000 ₽ </p>
-                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"
-                                onclick="addToCart('Кружка “Дуо“ светлая', 2000)">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="catalog-1-item">
-                <div class="filterDiv mugs">
-                    <img src='{% static "img/item9.png" %}' class="card-img" onclick="openPopup9()">
-                    <img src='{% static "img/line.svg" %}' id="line">
-
-                    <div class="textinfo">
-                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup9()"> Набор кружек с круглыми ручками
-                        </h2>
-                        <div class="additional">
-                            <p class="catalog-p" id="modal-text"> 3 500 ₽ </p>
-                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"
-                                onclick="addToCart(' Набор кружек с круглыми ручками', 3500)">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="catalog-4">
-
-            <div class="catalog-1-item">
-                <div class="filterDiv vases">
-                    <img src='{% static "img/item10.png" %}' class="card-img" onclick="openPopup10()">
-                    <img src='{% static "img/line.svg" %}' id="line">
-
-                    <div class="textinfo">
-                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup10()"> Ваза “Цветочная“ зеленая </h2>
-                        <div class="additional">
-                            <p class="catalog-p" id="modal-text"> 4 200 ₽ </p>
-                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"
-                                onclick="addToCart('Ваза “Цветочная“ зеленая', 4200)">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="catalog-1-item">
-                <div class="filterDiv vases">
-                    <img src='{% static "img/item11.png" %}' class="card-img" onclick="openPopup11()">
-                    <img src='{% static "img/line.svg" %}' id="line">
-
-                    <div class="textinfo">
-                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup11()"> Ваза “Цветочная“ розовая </h2>
-                        <div class="additional">
-                            <p class="catalog-p" id="modal-text"> 4 200 ₽ </p>
-                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"
-                                onclick="addToCart('Ваза “Цветочная“ розовая', 4200)">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="catalog-1-item">
-                <div class="filterDiv vases">
-                    <img src='{% static "img/item12.png" %}' class="card-img" onclick="openPopup12()">
-                    <img src='{% static "img/line.svg" %}' id="line">
-
-                    <div class="textinfo">
-                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup12()"> Ваза “Розовая“ </h2>
-                        <div class="additional">
-                            <p class="catalog-p" id="modal-text"> 4 200 ₽ </p>
-                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"
-                                onclick="addToCart('Ваза “Розовая“', 4200)">
-                        </div>
-                    </div>
-                </div>
+                <span class="itemclose" >&times;</span>
             </div>
         </div>
+
+
+            {% endfor %}
+    </div>
+ </div>
+
+
+
+
+<!--            <div class="catalog-1">-->
+<!--            <div class="catalog-1-item">-->
+<!--                <div class="filterDiv plates">-->
+<!--                    <img src='{% static "img/item1.png" %}' class="card-img" onclick="openPopup1()">-->
+<!--                    <img src='{% static "img/line.svg" %}' id="line">-->
+
+<!--                    <div class="textinfo">-->
+<!--                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup()"> Тарелка “Конфити” с вертикальным-->
+<!--                            бортиком,-->
+<!--                            20 см </h2>-->
+<!--                        <div class="additional">-->
+<!--                            <p class="catalog-p" id="modal-text"> 1 500 ₽ </p>-->
+<!--                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"-->
+<!--                                onclick="addToCart('Тарелка “Конфити” с вертикальным бортиком, 20 см', 1500)">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="catalog-1-item">-->
+<!--                <div class="filterDiv plates">-->
+<!--                    <img src='{% static "img/item2.png" %}' class="card-img" onclick="openPopup2()">-->
+<!--                    <img src='{% static "img/line.svg" %}' id="line">-->
+
+<!--                    <div class="textinfo">-->
+<!--                        <h2 class="catalog-h2" id="modal-text2" onclick="openPopup2()"> Набор из 4 глубоких тарелок-->
+<!--                            “Конфити” </h2>-->
+<!--                        <div class="additional">-->
+<!--                            <p class="catalog-p" id="modal-text2"> 6 500 ₽ </p>-->
+<!--                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"-->
+<!--                                onclick="addToCart('Набор из 4 глубоких тарелок “Конфити”', 6500)">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="catalog-1-item">-->
+<!--                <div class="filterDiv mugs">-->
+<!--                    <img src='{% static "img/item3.png" %}' class="card-img" onclick="openPopup3()">-->
+<!--                    <img src='{% static "img/line.svg" %}' id="line">-->
+
+<!--                    <div class="textinfo">-->
+<!--                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup3()"> Кружка “Конфити” </h2>-->
+<!--                        <div class="additional">-->
+<!--                            <p class="catalog-p" id="modal-text"> 1 200 ₽ </p>-->
+<!--                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"-->
+<!--                                onclick="addToCart('Кружка “Конфити”', 1200)">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--        <div class="catalog-2">-->
+
+<!--            <div class="catalog-1-item">-->
+<!--                <div class="filterDiv plates">-->
+<!--                    <img src='{% static "img/item4.png" %}' class="card-img" onclick="openPopup4()">-->
+<!--                    <img src='{% static "img/line.svg" %}' id="line">-->
+
+<!--                    <div class="textinfo">-->
+<!--                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup4()"> Глубокая тарелка “Песок” </h2>-->
+<!--                        <div class="additional">-->
+<!--                            <p class="catalog-p" id="modal-text"> 1 900 ₽ </p>-->
+<!--                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"-->
+<!--                                onclick="addToCart('Тарелка “Песок”, 20 см', 1900)">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="catalog-1-item">-->
+<!--                <div class="filterDiv mugs">-->
+<!--                    <img src='{% static "img/item5.png" %}' class="card-img" onclick="openPopup5()">-->
+<!--                    <img src='{% static "img/line.svg" %}' id="line">-->
+
+<!--                    <div class="textinfo">-->
+<!--                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup5()"> Кружка "Лицо" </h2>-->
+<!--                        <div class="additional">-->
+<!--                            <p class="catalog-p" id="modal-text"> 2 000 ₽ </p>-->
+<!--                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"-->
+<!--                                onclick="addToCart('Кружка “Лицо“', 2000)">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="catalog-1-item">-->
+<!--                <div class="filterDiv mugs">-->
+<!--                    <img src='{% static "img/item6.png" %}' class="card-img" onclick="openPopup6()">-->
+<!--                    <img src='{% static "img/line.svg" %}' id="line">-->
+
+<!--                    <div class="textinfo">-->
+<!--                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup6()"> Кружка “Дуо” черная </h2>-->
+<!--                        <div class="additional">-->
+<!--                            <p class="catalog-p" id="modal-text"> 1 800 ₽ </p>-->
+<!--                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"-->
+<!--                                onclick="addToCart('Кружка “Дуо” черная', 1800)">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--        <div class="catalog-3">-->
+
+<!--            <div class="catalog-1-item">-->
+<!--                <div class="filterDiv plates">-->
+<!--                    <img src='{% static "img/item7.png" %}' class="card-img" onclick="openPopup7()">-->
+<!--                    <img src='{% static "img/line.svg" %}' id="line">-->
+
+<!--                    <div class="textinfo">-->
+<!--                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup7()"> Глубокая тарелка “Кофейная”,-->
+<!--                            25 см </h2>-->
+<!--                        <div class="additional">-->
+<!--                            <p class="catalog-p" id="modal-text"> 2 300 ₽ </p>-->
+<!--                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"-->
+<!--                                onclick="addToCart('Глубокая тарелка “Кофейная”', 2300)">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="catalog-1-item">-->
+<!--                <div class="filterDiv mugs">-->
+<!--                    <img src='{% static "img/item8.png" %}' class="card-img" onclick="openPopup8()">-->
+<!--                    <img src='{% static "img/line.svg" %}' id="line">-->
+
+<!--                    <div class="textinfo">-->
+<!--                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup8()"> Кружка “Дуо“ светлая </h2>-->
+<!--                        <div class="additional">-->
+<!--                            <p class="catalog-p" id="modal-text"> 2 000 ₽ </p>-->
+<!--                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"-->
+<!--                                onclick="addToCart('Кружка “Дуо“ светлая', 2000)">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="catalog-1-item">-->
+<!--                <div class="filterDiv mugs">-->
+<!--                    <img src='{% static "img/item9.png" %}' class="card-img" onclick="openPopup9()">-->
+<!--                    <img src='{% static "img/line.svg" %}' id="line">-->
+
+<!--                    <div class="textinfo">-->
+<!--                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup9()"> Набор кружек с круглыми ручками-->
+<!--                        </h2>-->
+<!--                        <div class="additional">-->
+<!--                            <p class="catalog-p" id="modal-text"> 3 500 ₽ </p>-->
+<!--                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"-->
+<!--                                onclick="addToCart(' Набор кружек с круглыми ручками', 3500)">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--        <div class="catalog-4">-->
+
+<!--            <div class="catalog-1-item">-->
+<!--                <div class="filterDiv vases">-->
+<!--                    <img src='{% static "img/item10.png" %}' class="card-img" onclick="openPopup10()">-->
+<!--                    <img src='{% static "img/line.svg" %}' id="line">-->
+
+<!--                    <div class="textinfo">-->
+<!--                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup10()"> Ваза “Цветочная“ зеленая </h2>-->
+<!--                        <div class="additional">-->
+<!--                            <p class="catalog-p" id="modal-text"> 4 200 ₽ </p>-->
+<!--                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"-->
+<!--                                onclick="addToCart('Ваза “Цветочная“ зеленая', 4200)">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="catalog-1-item">-->
+<!--                <div class="filterDiv vases">-->
+<!--                    <img src='{% static "img/item11.png" %}' class="card-img" onclick="openPopup11()">-->
+<!--                    <img src='{% static "img/line.svg" %}' id="line">-->
+
+<!--                    <div class="textinfo">-->
+<!--                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup11()"> Ваза “Цветочная“ розовая </h2>-->
+<!--                        <div class="additional">-->
+<!--                            <p class="catalog-p" id="modal-text"> 4 200 ₽ </p>-->
+<!--                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"-->
+<!--                                onclick="addToCart('Ваза “Цветочная“ розовая', 4200)">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="catalog-1-item">-->
+<!--                <div class="filterDiv vases">-->
+<!--                    <img src='{% static "img/item12.png" %}' class="card-img" onclick="openPopup12()">-->
+<!--                    <img src='{% static "img/line.svg" %}' id="line">-->
+
+<!--                    <div class="textinfo">-->
+<!--                        <h2 class="catalog-h2" id="modal-text" onclick="openPopup12()"> Ваза “Розовая“ </h2>-->
+<!--                        <div class="additional">-->
+<!--                            <p class="catalog-p" id="modal-text"> 4 200 ₽ </p>-->
+<!--                            <img src='{% static "img/addtocard.svg" %}' id="plus" alt="Product"-->
+<!--                                onclick="addToCart('Ваза “Розовая“', 4200)">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
 
 
         <!-- HTML код для модального окна корзины-->
@@ -500,10 +543,3 @@
 
 </body>
 
-    <footer>
-        <div class="logo2">CLAY-MADE</div>
-    </footer>
-
-</body>
-
-</html>

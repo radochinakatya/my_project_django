@@ -19,8 +19,7 @@ from polls.controllers import index
 from polls.controllers import mailing
 from polls.controllers import signup
 from polls.controllers import slider
-from django.conf import settings
-from django.conf.urls.static import static
+from polls.controllers import item
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,7 +31,5 @@ urlpatterns = [
     path('mailing/', mailing.create),
     path('signup/', signup.create),
     path('index/', slider.index),
+    path('catalog/', item.catalog),
 ]
-# if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL,
-#                           document_root=settings.MEDIA_ROOT)

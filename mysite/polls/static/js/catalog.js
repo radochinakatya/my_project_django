@@ -69,11 +69,11 @@ function showCartItems() {
     cartHTML = '<ul>';
     for (let item of cart) {
 
-      cartHTML += `<li><img src="${item.image}" width="50"> ${item.product} - ${item.price} руб. x ${item.count} <button class="remove-item" data-product="${item.product}">Удалить</button></li>`;
+      cartHTML += `<li><img src="${item.image}" width="50"> ${item.product} - ${item.price} ₽ x ${item.count} <button class="remove-item" data-product="${item.product}">Удалить</button></li>`;
 
     }
     cartHTML += '</ul>';
-    costHTML += `<p>Итого: ${total} руб.</p>`;
+    costHTML += `<p>Итого: ${total} ₽</p>`;
   }
 
   cartItems.innerHTML = cartHTML;
@@ -148,87 +148,26 @@ const closeBtn = modal.querySelector('.itemclose');
 closeBtn.addEventListener('click', closeModal);
 
 */
-flag = 0
 
-// открытие всех карточек
 
-function openPopup1() {
-  if(flag == 0) document.getElementById("popupFormMain").style.display = "block";
-  flag = 1;
+const product = function (event) {
+    console.log('product')
+    const idCard = event.currentTarget.id;
+    const newId = 'popup' + String(idCard);
+    document.getElementById(newId).style.display = "block";
+    const closeIcon = document.querySelectorAll('.itemclose');
+    let btnClose = closeIcon[0];
+
+    for (let i = 0; i < closeIcon.length; i++) {
+        if (closeIcon[i]) {
+            closeIcon[i].addEventListener('click', () => {
+                console.log(newId)
+                document.getElementById(newId).style.display = "none";
+            })
+        }
+    }
+
 }
-
-function openPopup2() {
-  if(flag == 0) document.getElementById("popupFormMain2").style.display = "block";
-  flag = 1;
-}
-
-function openPopup3() {
-  if(flag == 0) document.getElementById("popupFormMain3").style.display = "block";
-  flag = 1;
-}
-
-function openPopup4() {
-  if(flag == 0) document.getElementById("popupFormMain4").style.display = "block";
-  flag = 1;
-}
-
-function openPopup5() {
-  if(flag == 0) document.getElementById("popupFormMain5").style.display = "block";
-  flag = 1;
-}
-
-function openPopup6() {
-  if(flag == 0) document.getElementById("popupFormMain6").style.display = "block";
-  flag = 1;
-}
-
-function openPopup7() {
-  if(flag == 0) document.getElementById("popupFormMain7").style.display = "block";
-  flag = 1;
-}
-
-function openPopup8() {
-  if(flag == 0) document.getElementById("popupFormMain8").style.display = "block";
-  flag = 1;
-}
-
-function openPopup9() {
-  if(flag == 0) document.getElementById("popupFormMain9").style.display = "block";
-  flag = 1;
-}
-
-function openPopup10() {
-  if(flag == 0) document.getElementById("popupFormMain10").style.display = "block";
-  flag = 1;
-}
-
-function openPopup11() {
-  if(flag == 0) document.getElementById("popupFormMain11").style.display = "block";
-  flag = 1;
-}
-
-function openPopup12() {
-  if(flag == 0) document.getElementById("popupFormMain12").style.display = "block";
-  flag = 1;
-}
-
-// закрытие всех карточек
-function closePopup() {
-  document.getElementById("popupFormMain").style.display = "none";
-  document.getElementById("popupFormMain2").style.display = "none";
-  document.getElementById("popupFormMain3").style.display = "none";
-  document.getElementById("popupFormMain4").style.display = "none";
-  document.getElementById("popupFormMain5").style.display = "none";
-  document.getElementById("popupFormMain6").style.display = "none";
-  document.getElementById("popupFormMain7").style.display = "none";
-  document.getElementById("popupFormMain8").style.display = "none";
-  document.getElementById("popupFormMain9").style.display = "none";
-  document.getElementById("popupFormMain10").style.display = "none";
-  document.getElementById("popupFormMain11").style.display = "none";
-  document.getElementById("popupFormMain12").style.display = "none";
-  flag = 0;
-}
-
 
 // закрытие по клику на фон для всех карточек
 
@@ -236,40 +175,8 @@ window.onclick = function(event) {
   if (event.target == cartModal) {
     cartModal.style.display = 'none';
   }
-  if (event.target == popupFormMain) {
-    closePopup();
-  }
-  if (event.target == popupFormMain2) {
-    closePopup();
-  }
-  if (event.target == popupFormMain3) {
-    closePopup();
-  }
-  if (event.target == popupFormMain4) {
-    closePopup();
-  }
-  if (event.target == popupFormMain5) {
-    closePopup();
-  }
-  if (event.target == popupFormMain6) {
-    closePopup();
-  }
-  if (event.target == popupFormMain7) {
-    closePopup();
-  }
-  if (event.target == popupFormMain8) {
-    closePopup();
-  }
-  if (event.target == popupFormMain9) {
-    closePopup();
-  }
-  if (event.target == popupFormMain10) {
-    closePopup();
-  }
-  if (event.target == popupFormMain11) {
-    closePopup();
-  }
-  if (event.target == popupFormMain12) {
-    closePopup();
+  if (event.target == newId) {
+    console.log(newId)
+      document.getElementById(newId).style.display = "none";
   }
 }
