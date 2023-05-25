@@ -71,7 +71,7 @@
                     <h2 class="item-modal-title">{{ item.name }}</h2>
                     <p class="item-modal-description">{{ item.description }}</p>
                     <p class="price-popup">{{ item.price }} ₽</p>
-                    <p class="addtocard-popup" onclick="addToCart(event)">В корзину</p>
+                    <p class="addtocard-popup" onclick="addToCart('{{ item.name }}', {{ item.price }})"">В корзину</p>
                 </div>
                 <span class="itemclose" >&times;</span>
             </div>
