@@ -323,6 +323,11 @@ input[type="tel"]{
     align-items: baseline;
 }
 
+.button:hover{
+    background-color: black;
+    color: white;
+}
+
 .signUpclose {
     color: #aaaaaa;
     font-size: 60px;
@@ -716,12 +721,12 @@ footer {
     /*flex-wrap: wrap;*/
     width: 520px;
     margin-bottom: 40px;
-    margin-right: 120px;
+    margin-right: 80px;
 }
 
-.catalog-1-item:nth-child(5n) {
-    margin-right: 0;
-}
+/*.catalog-1-item:nth-child(3n) {*/
+/*    margin-right: 0;*/
+/*}*/
 
 .catalog-h2 {
     font-style: normal;

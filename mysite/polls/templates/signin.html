@@ -6,10 +6,10 @@
 {% block body %}
 
 <header>
-    <div class="logo"><a href="index/">CLAY-MADE</a></div>
+    <div class="logo"><a href="../index/">CLAY-MADE</a></div>
     <nav>
         <ul>
-            <li><a href="index/" id="main">Главная</a></li>
+            <li><a href="../index/" id="main">Главная</a></li>
             <li><a href="../catalog/">Магазин</a></li>
             <li><a href="../delivery.html">Доставка и оплата</a></li>
             <li><a href="../about.html">О нас</a></li>
@@ -23,25 +23,34 @@
     <!-- Основной блок слайдера -->
     <div class="slider">
 
-        <!-- Первый слайд -->
+        <!-- Первый слайд
         <div class="item">
             <img src='{% static "Gallary1.png" %}'>
         </div>
 
-        <!-- Второй слайд -->
+         Второй слайд
         <div class="item">
             <img src='{% static "slide2.png" %}'>
         </div>
 
-        <!-- Третий слайд -->
+         Третий слайд
         <div class="item">
             <img src='{% static "slide3.png" %}'>
         </div>
+-->
+
+        {% for slider in sliders.all %}
+
+        <div class="item">
+            <img src={{ slider.image }} >
+        </div>
+        {% endfor %}
 
         <!-- Кнопки-стрелочки -->
         <a class="previous" onclick="previousSlide()"><img src='{% static "img/left.svg" %}'></a>
         <a class="next" onclick="nextSlide()"><img src='{% static "img/Right.svg" %}'></a>
     </div>
+
 
 
     <div class="About">

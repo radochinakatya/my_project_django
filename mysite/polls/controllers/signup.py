@@ -10,4 +10,4 @@ def create(request):
     signup.password = request.POST.get("password")
     signup.save()
 
-    return redirect('../index.html')
+    return redirect('../index/')

@@ -7,4 +7,4 @@ def create(request):
     mailing.email = request.POST.get("email")
     mailing.save()
 
-    return redirect('../index.html')
+    return redirect('../index/')
