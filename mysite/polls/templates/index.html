@@ -82,19 +82,21 @@
 
     <button type="button"><a href="../catalog/">Перейти в каталог</a></button>
 
-    <form class="input" method="post" action="../mailing/">
-        {% csrf_token %}
-        <div class="inputcontent" >
-            <div class="emailtext">
-                Подпишись на рассылку, чтобы первым узнавать о новых коллекциях
-            </div>
-            <div class="inputEmail">
-                <a href="mailto: 11111@gmail.com"></a>
+   <form class="input" method="post" action="../mailing/">
+    {% csrf_token %}
+    <div class="inputcontent">
+        <div class="emailtext">
+            Подпишись на рассылку, чтобы первым узнавать о новых коллекциях
+        </div>
+        <div class="inputEmail">
+            <a href="mailto:11111@gmail.com"></a>
+            <div class="emailInputWrapper">
                 <input id="emailInput" type="email" name="email" placeholder="E-mail">
                 <input id="emailSubmit" type="image" src='{% static "img/right.png" %}' width="26px" height="18px">
             </div>
         </div>
-    </form>
+    </div>
+</form>
 
     <!-- код для модального окна рассылки-->
     <div id="inputModal" class="modal">
