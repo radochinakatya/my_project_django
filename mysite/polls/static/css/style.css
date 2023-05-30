@@ -715,6 +715,7 @@ footer {
 }
 
 .catalog-1-item {
+    position: relative;
     /*display: flex;*/
     /*flex-direction: column;*/
     /*!*margin-right: 120px;*!*/
@@ -722,6 +723,29 @@ footer {
     width: 520px;
     margin-bottom: 40px;
     margin-right: 80px;
+}
+
+.card-img,
+.card-hover-img {
+    border-radius: 10px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.card-hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+    height: 546px;
+}
+
+.catalog-1-item:hover .card-img {
+  opacity: 0;
+}
+
+.catalog-1-item:hover .card-hover-img {
+  opacity: 1;
 }
 
 /*.catalog-1-item:nth-child(3n) {*/

@@ -153,7 +153,7 @@ closeBtn.addEventListener('click', closeModal);
 let newId = '';
 
 const product = function (event) {
-    console.log('product')
+    console.log('product');
     const idCard = event.currentTarget.id;
     newId = 'popup' + String(idCard);
     document.getElementById(newId).style.display = "block";
@@ -163,19 +163,19 @@ const product = function (event) {
     for (let i = 0; i < closeIcon.length; i++) {
         if (closeIcon[i]) {
             closeIcon[i].addEventListener('click', () => {
-                console.log(newId)
+                console.log(newId);
                 document.getElementById(newId).style.display = "none";
-            })
+            });
         }
     }
 }
 
 window.onclick = function(event) {
-  if (event.target == cartModal) {
-    cartModal.style.display = 'none';
-  }
-  if (event.target == newId) {
-    console.log(newId);
-    document.getElementById(newId).style.display = "none";
-  }
+    if (event.target == cartModal) {
+        cartModal.style.display = 'none';
+    }
+    if (event.target.id == newId) {
+        console.log(newId);
+        document.getElementById(newId).style.display = "none";
+    }
 }
